@@ -1,0 +1,55 @@
+<div class="my_cookbook_name">
+  <h2>My Cookbook</h2>
+  <form action="/cuisines/new" method="get">
+    <input type="submit" value="Add New Cuisine">
+  </form>
+</div>
+
+<ul class="cuisines">
+  <% @cuisines.each do |cuisine| %>
+    <li>
+      <a href="/cuisines/<%= cuisine[:id]%>/recipes">
+        <div style="float: left;"><%= cuisine[:name] %></div>
+        <div style="float: right;"><%= cuisine[:recipes_count] %></div>
+      </a>
+      <br />
+      
+      <form action="/cuisines/<%= cuisine[:id] %>/edit" method="get">
+        <input type="submit" value="Edit">
+      </form>
+      
+      <form action="/cuisines/<%= cuisine[:id] %>/delete" method="post">
+      <input type="submit" value="Delete">
+      </form>
+    </li>
+  <% end %>
+</div>
+
+<div class="cuisines_pages">
+  <% if @num_of_pages.zero? %>
+  <% elsif @current_page_num == 1 %>
+    <span class="previous_page">Previous</span>
+  <% elsif @current_page_num == 2 %>
+    <a class="previous_page" href="/cuisines?page">Previous</a>
+  <% else %>
+    <a class="previous_page" href="/cuisines?page=<%= @current_page_num - 1 %>">Previous</a>
+  <% end %>
+
+  <% page_links(@num_of_pages, @current_page_num).each do |num| %>
+    <% if num == 1 %>
+      <a class="<%= page_class(num, @current_page_num) %>" href="/cuisines?page"><%= num %></a>
+    <% else %>
+      <a class="<%= page_class(num, @current_page_num) %>" href="/cuisines?page=<%= num %>"><%= num %></a>
+    <% end %>
+  <% end %>
+
+  <% if @num_of_pages.zero? %>
+  <% elsif @num_of_pages == 1 || @current_page_num == @num_of_pages %>
+    <span class="next_page">Next</span>
+  <% elsif @num_of_pages > 1 && @current_page_num == 1 %>
+    <a class="next_page" href="/cuisines?page=2">Next</a>
+  <% else %>
+    <a class="next_page" href="/cuisines?page=<%= @current_page_num + 1 %>">Next</a>
+  <% end %>
+</div>
+

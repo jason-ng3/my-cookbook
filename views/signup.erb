@@ -1,0 +1,23 @@
+<div class="signup_page">
+  <h2>Create Account</h2>
+  <form action="/signup" method="post">
+    <div class="create_account_inputs">
+      <input name="username" type="text" placeholder="Username.." value="<%= params[:username] %>">
+      <br />
+      <input name="password" type="password" placeholder="Password (min 8 characters)..">
+      <br />
+      <input name="confirm_password" type="password" placeholder="Confirm password">
+    </div>
+
+    <div class="password_requirements">
+      <ul>
+        Passwords must be:
+        <li>8 characters or more</li>
+        <li>contain letters (A-Z)</li>
+        <li>contain numbers(0-9)</li>
+      </ul>
+    </div>
+    
+    <input type="submit" value="Create Account">
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="edit_cuisine_name">
+  <form action="/cuisines/<%= @cuisine[:id] %>" method="post">
+    <label for="cuisine_name">Enter new name for cuisine:<label>
+    <input id="cuisine_name" name="cuisine_name" type="text" value="<%= params[:cuisine_name] || @cuisine[:name] %>">
+    <input type="submit" value="Update">
+  </form>
+
+  <form action="/cuisines" method="get">
+    <input type="submit" value="Cancel">
+  </form>
+<div>

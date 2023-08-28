@@ -1,0 +1,24 @@
+<div class="add_recipe">
+  <form action="/cuisines/<%= params[:cuisine_id] %>/recipes" method="post">
+    <div>
+      <label for="recipe_name"><b>Name</br><label>
+    </div>
+    <div>
+      <input id="recipe_name" name="recipe_name" type="text" placeholder="Burrito Bowl" value="<%= params[:recipe_name] %>">
+    </div>
+    
+    <div>
+      <label for="ingredients"><b>Ingredients (Enter an ingredient per line)</b><label>
+      <textarea id="ingredients" name="ingredients" placeholder="1 cup white flour" rows="5" cols="115"><%= params[:ingredients] %></textarea>
+    </div>
+    
+    <label for="instructions"><b>Instructions (Use one empty line between each step)</b><label>
+    <textarea id="instructions" name="instructions" placeholder="Wash and chop carrots, onions and celery." rows="10" cols="115"><%= params[:instructions] %></textarea>
+    
+    <input type="submit" value="Save">
+  </form>
+
+  <form action="/cuisines/<%= params[:cuisine_id] %>/recipes" method="get">
+    <input type="submit" value="Cancel">
+  </form>
+</div>

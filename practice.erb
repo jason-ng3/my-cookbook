@@ -1,0 +1,41 @@
+def error_for_username(username)
+  if !(3..64).cover?(username.length)
+    "Please enter a username between 3 and 64 characters long."
+  elsif @storage.find_user_by_username(username)
+
+  end
+end
+
+def find_user_by_username(username)
+  sql = <<~SQL
+    SELECT username FROM users 
+    WHERE username ILIKE $1;
+  SQL
+
+  result = @db.exec_params(sql, username)
+  result.ntuples.zero? ? nil : result.first
+end
+
+def create_user(username, password)
+  sql = <<~SQL
+    INSERT INTO users (username, hashed_password)
+    VALUES ($1, $2)
+  SQL
+
+  hashed_password = BCrypt::Password.create(password)
+  @db.exec_params(sql, [username, hashed_password])
+end
+
+post '/login' do
+  user = @storage.find_user_by_username(params[:username])
+
+  if user && BCrypt::Password.new(user['hashed_password']) == params[:password]
+    session[:user_id] = user['id']
+    session[:message] = "Logged in!"
+    redirect_after_login
+  else
+    session[:message] = "Incorrect username or password"
+    status 422 
+    erb :login, layout: :layout
+  end
+end

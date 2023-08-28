@@ -1,0 +1,210 @@
+ul {
+  display: inline-block;  
+  text-align: left; 
+}
+
+.home_page, .signup_page, .login_page {
+  text-align: center;
+}
+
+.app_intro {
+  padding-left: 300px;
+  padding-right: 300px;
+  line-height: 1.2;
+}
+
+.create_account_inputs, .login_inputs {
+  line-height: 1.5;
+}
+
+.signup_button {
+  padding-bottom: 5px;
+}
+
+.password_requirements {
+  text-align: center;
+}
+
+.login_button {
+  padding-top: 5px;
+}
+
+.header_links {
+  width: 97%;
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.header_links form {
+  margin-right: 40px;
+  float: right;
+}
+
+.flash_message {
+  max-width:fit-content;
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+
+.my_cookbook_name {
+  display: block;
+  margin-left: 40px;
+  text-align: left;
+}
+
+ul.cuisines {
+  list-style: none;
+  width: 1000px;
+}
+
+ul.cuisines li {
+  height: 100px;
+  width: 150px;
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+ul.cuisines li form {
+  display: inline-block;
+  padding-top: 50px;
+}
+
+ul.cuisines li a {
+  text-decoration: none;
+}
+
+.new_cuisine_name {
+  margin-left: 40px;
+  padding-top: 80px;
+}
+
+.new_cuisine_name form {
+  display: inline-block;
+}
+
+.edit_cuisine_name {
+  margin-left: 40px;
+  padding-top: 80px;
+}
+
+.edit_cuisine_name form {
+  display: inline-block;
+}
+
+.cuisine_name {
+  display: block;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.cuisine_name form {
+  display: inline-block;
+}
+
+ul.recipe {
+  list-style: none;
+  width: 1000px;
+}
+
+ul.recipe li {
+  display: block;
+  width: 500px;
+  overflow: auto;
+}
+
+ul.recipe li a{
+  display: inline-block;
+}
+
+ul.recipe li form{
+  float: right;
+  margin-right: 5px;
+
+}
+
+.cuisines_pages, .recipes_pages {
+  margin-top: 20px;
+  margin-right: 80px;
+  text-align: center;
+}
+
+.cuisines_pages a, .recipes_pages a {
+  text-decoration: none;
+}
+
+.cuisines_pages a.current_page, .recipes_pages a.current_page {
+  font-weight: bold;
+}
+
+.previous_page {
+  padding-right: 10px;
+}
+
+.next_page {
+  padding-left: 10px;
+}
+
+.recipe_name {
+  display: block;
+  text-align: left;
+  margin-left: 40px;
+}
+
+.recipe_name form {
+  display: inline-block;
+}
+
+.ingredients {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.ingredients h2 {
+  margin-bottom: 0px;
+}
+
+.ingredients ul {
+  width: 350px;
+  list-style: none;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+.ingredients ul li {
+  margin-bottom: 5px;
+}
+
+.instructions {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+}
+
+.instructions h2 {
+  margin-bottom: 0px;
+}
+
+.instructions ol {
+  width: 575px;
+  padding-left: 20px;
+}
+
+.edit_recipe, .add_recipe {
+  margin-left: 40px;
+}
+
+.edit_recipe form, .add_recipe form {
+  display: inline-block;
+}
+
+
+
+
+

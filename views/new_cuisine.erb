@@ -1,0 +1,11 @@
+<div class="new_cuisine_name">
+  <form action="/cuisines" method="post">
+    <label for="cuisine_name">Enter new cuisine:<label>
+    <input id="cuisine_name" name="cuisine_name" type="text" placeholder="Ethiopian.." value="<%= params[:cuisine_name] %>">
+    <input type="submit" value="Add">
+  </form>
+
+  <form action="/cuisines" method="get">
+    <input type="submit" value="Cancel">
+  </form>
+</div>

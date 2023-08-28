@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Cookbook</title>
+  <link rel="stylesheet" href="/stylesheets/my_cookbook.css">
+</head>
+<body>
+  <div class="header_links">
+    <%== yield_content :header_links %>
+    <% if session[:user_id] %>
+      <form action="/logout" method="post">
+        <input type="submit" value="Logout">
+      </form>
+    <% end %>
+  </div>
+
+  <div class="flash_message">
+    <% if session[:message] %>
+      <%= session.delete(:message) %>
+    <% end %>
+  </div>
+  
+  
+  <%== yield %>
+</body>
+</html>

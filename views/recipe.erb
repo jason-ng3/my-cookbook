@@ -1,0 +1,36 @@
+<% content_for :header_links do %>
+  <a href="/cuisines/<%= @cuisine[:id] %>/recipes"><- All <%= @cuisine[:name] %> Recipes</a>
+<% end %>
+
+<div class="recipe_name">
+  <h2><%= @recipe[:name] %></h2>
+  <form action="/cuisines/<%= @cuisine[:id] %>/recipes/<%= params[:recipe_id] %>/edit" method="get">  
+    <input type="submit" value="Edit">
+  </form>
+  <form action="/cuisines/<%= @cuisine[:id] %>/recipes/<%= params[:recipe_id] %>/delete" method="post">
+    <button type="submit">Delete</button>
+  </form>
+</div>
+
+<div class="ingredients">
+  <h3>Ingredients</h3>
+  <ul>
+    <% if @recipe[:ingredients] %>
+      <% format_ingredients(@recipe[:ingredients]).each do |ingredient| %>
+        <li><%= "#{ingredient}" %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="instructions">
+  <h3>Instructions</h3>
+  <ol>
+    <% if @recipe[:instructions] %>
+      <% format_instructions(@recipe[:instructions]).each do |step| %>
+        <li><%= "#{step}" %></li>
+        <br />
+      <% end %>
+    <% end %>
+  </ol>
+</div>

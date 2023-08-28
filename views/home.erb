@@ -1,0 +1,17 @@
+<div class="home_page">
+  <h2>Welcome to My Cookbook!</h2>
+  <p class="app_intro">
+    Let's be 100% honest with ourselves and the world.
+    Haven't you always wanted your own cookbook?
+    Create your account now to fulfill your dream!
+  </p>
+
+  <% unless session[:user_id] %>
+    <div class="signup_button">
+      <a href="/signup"><button type="submit">Create Account</button></a>
+    </div>
+    <div>
+      <a href="/login"><button type="submit">Login To My Cookbook</button></a>
+    </div>
+  <% end %>
+</div>
