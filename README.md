@@ -3,10 +3,10 @@ My Cookbook is a Sinatra application that manages two data types: cuisines and r
 
 All paths on the application except the home page, signup page and login page are restricted and require login authentication.
 
-## Database Schema & Seed Data**
-- SQL to create the database schema and seed data are contained within the seed_data.sql file. It includes the SQL to create the database `my_cookbook`, and the tables `users`, `cuisines`, and `recipes`. It also includes the SQL to insert seed data: the `admin` user, cuisines and recipes.
+## Database Schema & Seed Data
+The SQL to create the database schema and seed data are contained within the seed_data.sql file. It includes the SQL to create the database `my_cookbook`, and the tables `users`, `cuisines`, and `recipes`. It also includes the SQL to insert seed data: the `admin` user, cuisines and recipes.
 
-## Configure Application With Seed Data & Start the Application:
+## Getting Started
 **Version of Ruby I Used to Run Application:**
 Ruby 2.7.0
 
